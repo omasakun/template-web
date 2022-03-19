@@ -1,0 +1,19 @@
+{
+  "name": "template",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "check": "prettier --check .",
+    "fix": "prettier --write ."
+  },
+  "lint-staged": {
+    "*.!(editorconfig|*ignore)": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.0"
+  }
+}
