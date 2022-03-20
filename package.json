@@ -27,6 +27,7 @@
     "lint-staged": "^12.3.7",
     "npm-check-updates": "^12.5.4",
     "prettier": "^2.6.0",
+    "prettier-plugin-sh": "^0.8.1",
     "typescript": "^4.5.4"
   }
 }
