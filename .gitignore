@@ -1,6 +1,8 @@
 # auto generated
 node_modules
 
+/repos/client/dist
+
 # private
 *.log
 /ref*
