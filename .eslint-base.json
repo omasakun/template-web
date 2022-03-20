@@ -1,15 +1,9 @@
 {
-  "root": true,
-  "env": {
-    "es2021": true
-    // "node": true
-  },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "$schema": "https://json.schemastore.org/eslintrc.json",
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": ["./repos/*/tsconfig.json", "./repos/*/tsconfig.node.json"]
   },
-  "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-unsafe-assignment": "warn",
     "@typescript-eslint/no-unsafe-call": "warn"
