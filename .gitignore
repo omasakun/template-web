@@ -1,7 +1,8 @@
 # auto generated
 node_modules
 
-/repos/client/dist
+/repos/*/dist
+/repos/*/coverage
 
 # private
 *.log
