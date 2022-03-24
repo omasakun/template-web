@@ -9,7 +9,9 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended", // https://github.com/yannickcr/eslint-plugin-react
+    "plugin:react/jsx-runtime", // https://github.com/yannickcr/eslint-plugin-react
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
