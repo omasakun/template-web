@@ -9,7 +9,7 @@ const test: InlineConfig = {
   globals: true, // otherwise, `@testing-library/jest-dom` won't work
   environment: 'jsdom',
   setupFiles: 'test/setup.ts',
-  includeSource: ['src/**/*.{js,ts}'],
+  includeSource: ['src/**/*.ts'],
 }
 
 // https://vitejs.dev/config/
