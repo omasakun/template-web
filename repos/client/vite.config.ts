@@ -18,5 +18,8 @@ export default defineConfig({
   define: {
     'import.meta.vitest': 'undefined', // https://vitest.dev/guide/in-source.html#production-build
   },
+  server: {
+    port: 8137,
+  },
   test,
 })

@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "plugin:cypress/recommended" // https://github.com/cypress-io/eslint-plugin-cypress
+  ]
+}

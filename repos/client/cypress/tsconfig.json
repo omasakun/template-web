@@ -3,7 +3,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext", "dom"],
-    "types": ["cypress"]
+    "types": ["cypress", "@testing-library/cypress"],
+    "module": "esnext",
+    "moduleResolution": "node"
   },
   "include": ["."]
 }

@@ -3,9 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --port 8137",
+    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview --port 8137",
+    "preview": "vite preview",
     "test": "vitest --ui",
     "cypress": "cypress open",
     "coverage": "vitest run --coverage",
@@ -17,7 +17,9 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@cypress/vite-dev-server": "^2.2.2",
     "@linaria/core": "^3.0.0-beta.15",
+    "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/react-hooks": "^7.0.2",

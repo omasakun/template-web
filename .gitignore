@@ -3,6 +3,8 @@ node_modules
 
 /repos/*/dist
 /repos/*/coverage
+/repos/*/cypress/videos
+/repos/*/cypress/screenshots
 
 # private
 *.log

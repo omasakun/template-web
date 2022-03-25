@@ -11,11 +11,18 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-/**
- * @type {Cypress.PluginConfig}
- */
-// eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+import { startDevServer } from '@cypress/vite-dev-server'
+import { resolve } from 'path'
+
+// https://docs.cypress.io/guides/component-testing/framework-configuration#Vite-Based-Projects-Vue-React
+const config: Cypress.PluginConfig = (on, config) => {
+  on('dev-server:start', (options) => {
+    return startDevServer({
+      options,
+      viteConfig: {
+        configFile: resolve(__dirname, '..', '..', 'vite.config.ts'),
+      },
+    })
+  })
 }
+export default config
