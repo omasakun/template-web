@@ -1,6 +1,1 @@
-# auto generated
-node_modules
-
-# private
-*.log
-/ref*
+.gitignore
