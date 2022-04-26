@@ -23,8 +23,10 @@ case "$CMD" in
     ln --symbolic --relative -T "$SCRIPT" "$BIN/-"
     echo "Added to \$PATH: $BIN"
     export PATH="$PATH:$BIN"
+
+    complete -W "$("$SCRIPT")" "-"
     ;;
-  bridge.net) ##  WSL2: Expose port 8137
+  bridge.net) ##  Expose port 8137 (WSL2)
     # ref: https://github.com/microsoft/WSL/issues/5439
     IP="$(ip r | tail -n 1 | cut -d" " -f 9)"
     CMD="echo 'Processing...'"
@@ -32,7 +34,23 @@ case "$CMD" in
     powershell.exe -Command "Start-process powershell -Verb runas -Wait -Argumentlist \"$CMD\"" # run as admin
     echo "Make sure that port 8137 is not blocked by a firewall"
     ;;
-  git.archive) ## Tag and then delete the branch passed as an argument
+  c.dev) ##       Start dev server
+    cd repos/client
+    pnpm dev -- "$@"
+    ;;
+  c.test) ##      Run test with fancy UI
+    cd repos/client
+    pnpm test -- "$@"
+    ;;
+  c.cov) ##       Collect coverage
+    cd repos/client
+    pnpm coverage -- "$@"
+    ;;
+  c.cov.show) ##  Show coverage
+    cd repos/client
+    pnpm coverage:serve -- "$@"
+    ;;
+  git.archive) ## Tag and delete the git branch
     NAME="$1"
     EXISTS="$(git show-ref "refs/heads/$NAME")"
     if [ ! -n "$EXISTS" ]; then
@@ -43,7 +61,7 @@ case "$CMD" in
     git branch -D "$NAME"
     echo "ok."
     ;;
-  git.restore) ## Restore the archived branch passed as an argument
+  git.restore) ## Restore the archived git branch
     NAME="$1"
     git checkout -b "$NAME" "archive/$NAME"
     ;;
