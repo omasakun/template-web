@@ -36,19 +36,19 @@ case "$CMD" in
     ;;
   c.dev) ##       Start dev server
     cd repos/client
-    pnpm dev -- "$@"
+    pnpm dev "$@"
     ;;
   c.test) ##      Run test with fancy UI
     cd repos/client
-    pnpm test -- "$@"
+    pnpm test "$@"
     ;;
   c.cov) ##       Collect coverage
     cd repos/client
-    pnpm coverage -- "$@"
+    pnpm coverage "$@"
     ;;
   c.cov.show) ##  Show coverage
     cd repos/client
-    pnpm coverage:serve -- "$@"
+    pnpm coverage:serve "$@"
     ;;
   git.archive) ## Tag and delete the git branch
     NAME="$1"
