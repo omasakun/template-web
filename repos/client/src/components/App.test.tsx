@@ -6,7 +6,7 @@ import App from './App'
 describe('App', () => {
   test('the title is visible', () => {
     render(<App />)
-    expect(screen.getByText(/Hello Vite \+ React!/i)).toBeInTheDocument()
+    expect(screen.getByText(/Hello!/i)).toBeInTheDocument()
   })
 
   test('should increment count on click', async () => {
