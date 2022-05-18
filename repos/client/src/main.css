@@ -8,6 +8,17 @@
   --sans: 'Zen Kaku Gothic New', sans-serif;
   --mono: 'Ubuntu Mono', 'Zen Kaku Gothic New', monospace;
   --code: 'Inconsolata', 'Zen Kaku Gothic New', monospace;
+
+  --bg: rgb(188 210 238);
+  --bg2: rgb(255 255 255);
+
+  --fg: rgb(7 7 7);
+  --fg70: rgb(7 7 7 / 70%);
+  --fg50: rgb(7 7 7 / 60%);
+  --fg30: rgb(7 7 7 / 40%);
+  --fg20: rgb(7 7 7 / 20%);
+  --fg10: rgb(7 7 7 / 10%);
+  --fg05: rgb(7 7 7 / 05%);
 }
 
 html,
@@ -16,6 +27,8 @@ body,
   height: 100%;
   width: 100%;
 
+  color: var(--fg);
+  background-color: var(--bg);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,6 +59,21 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: var(--fg20);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg50);
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+
 /** utility classes */
 
 .grow {
@@ -56,4 +84,9 @@ input::-webkit-inner-spin-button {
 }
 .block {
   display: block;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -12,7 +12,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.!(js|ts|jsx|tsx|editorconfig|*ignore)": [
+    "*.!(js|ts|jsx|tsx|editorconfig|*ignore|npmrc|svg)": [
       "prettier --write"
     ]
   },
