@@ -19,6 +19,7 @@
 - Svelte
 - Jest + Svelte Testing Library
 - Cypress + Cypress Testing Library
+- Playwright
 - Husky + Lint Staged
 - ESLint
 - Prettier

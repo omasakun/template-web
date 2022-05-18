@@ -11,7 +11,7 @@ shift || :
 pushd "$ROOT" > /dev/null
 
 case "$CMD" in
-  meta.setup) #   Setup this launcher
+  meta.setup) #    Setup this launcher
     BIN="$DIR/bin"
     if [ -e "$BIN" ]; then
       if [ -e "$BIN/-" ]; then
@@ -26,7 +26,7 @@ case "$CMD" in
 
     complete -W "$("$SCRIPT")" "-"
     ;;
-  bridge.net) ##  Expose port 8137 (WSL2)
+  bridge.net) ##   Expose port 8137 (WSL2)
     # ref: https://github.com/microsoft/WSL/issues/5439
     IP="$(ip r | tail -n 1 | cut -d" " -f 9)"
     CMD="echo 'Processing...'"
@@ -34,31 +34,35 @@ case "$CMD" in
     powershell.exe -Command "Start-process powershell -Verb runas -Wait -Argumentlist \"$CMD\"" # run as admin
     echo "Make sure that port 8137 is not blocked by a firewall"
     ;;
-  c.dev) ##       Start dev server
+  c.dev) ##        Start dev server
     cd repos/client
     pnpm dev "$@"
     ;;
-  c.build) ##     Build client app
+  c.build) ##      Build client app
     cd repos/client
     pnpm build "$@"
     ;;
-  c.test) ##      Run test with fancy UI
+  c.test) ##       Run test with fancy UI
     cd repos/client
     pnpm test "$@"
     ;;
-  c.cypress) ##   Run test with fancy UI
+  c.cypress) ##    Run test with Cypress
     cd repos/client
     pnpm cypress "$@"
     ;;
-  c.cov) ##       Collect coverage
+  c.playwright) ## Run test with Playwright
+    cd repos/client
+    pnpm playwright "$@"
+    ;;
+  c.cov) ##        Collect coverage
     cd repos/client
     pnpm coverage "$@"
     ;;
-  c.cov.show) ##  Show coverage
+  c.cov.show) ##   Show coverage
     cd repos/client
     pnpm coverage:serve "$@"
     ;;
-  git.archive) ## Tag and delete the git branch
+  git.archive) ##  Tag and delete the git branch
     NAME="$1"
     EXISTS="$(git show-ref "refs/heads/$NAME")"
     if [ ! -n "$EXISTS" ]; then
@@ -69,11 +73,11 @@ case "$CMD" in
     git branch -D "$NAME"
     echo "ok."
     ;;
-  git.restore) ## Restore the archived git branch
+  git.restore) ##  Restore the archived git branch
     NAME="$1"
     git checkout -b "$NAME" "archive/$NAME"
     ;;
-  help) ##        Show this help
+  help) ##         Show this help
     echo "# Subcommands"
     sed -ne '/@sed/!s/## //p' "$SCRIPT" | sed -e 's/^ *//g'
     ;;

@@ -13,6 +13,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest --ui",
     "cypress": "cypress open",
+    "playwright": "playwright test",
     "coverage": "vitest run --coverage",
     "coverage:serve": "http-server coverage"
   },
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "@cypress/vite-dev-server": "^2.2.2",
+    "@playwright-testing-library/test": "^4.2.1",
+    "@playwright/test": "^1.22.1",
     "@sveltejs/adapter-static": "1.0.0-next.31",
     "@sveltejs/kit": "1.0.0-next.334",
     "@testing-library/cypress": "^8.0.2",
@@ -39,7 +42,6 @@
     "c8": "^7.11.0",
     "cypress": "^9.5.2",
     "http-server": "^14.1.0",
-    "sass": "^1.51.0",
     "vite": "^2.9.9",
     "vite-tsconfig-paths": "^3.4.1",
     "vitest": "^0.12.6",
