@@ -1,5 +1,9 @@
 # Template
 
+## TODO
+
+- eslint is partially broken : `repos/client/.eslintrc` should use proper `parserOptions`
+
 ## Usage
 
 1. Edit `README.md`
