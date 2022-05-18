@@ -1,0 +1,58 @@
+@import 'ress';
+@import '@fontsource/roboto';
+@import '@fontsource/ubuntu-mono';
+@import '@fontsource/inconsolata/variable-full.css';
+@import '@fontsource/zen-kaku-gothic-new';
+
+:root {
+  --sans: 'Zen Kaku Gothic New', sans-serif;
+  --mono: 'Ubuntu Mono', 'Zen Kaku Gothic New', monospace;
+  --code: 'Inconsolata', 'Zen Kaku Gothic New', monospace;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+input,
+textarea {
+  color: inherit;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--mono);
+}
+
+svg.feather {
+  transform: translateY(0.07em);
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+  opacity: 0;
+}
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+/** utility classes */
+
+.grow {
+  flex-grow: 1;
+}
+.mono {
+  font-family: var(--mono);
+}
+.block {
+  display: block;
+}
