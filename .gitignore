@@ -1,5 +1,6 @@
 # auto generated
 node_modules
+.svelte-kit
 
 /repos/*/dist
 /repos/*/coverage

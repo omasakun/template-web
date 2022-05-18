@@ -16,9 +16,8 @@
 - pnpm
 - Vite
 - TypeScript
-- React
-- Linaria
-- Jest + React Testing Library
+- Svelte
+- Jest + Svelte Testing Library
 - Cypress + Cypress Testing Library
 - Husky + Lint Staged
 - ESLint
