@@ -1,4 +1,3 @@
-// https://docs.cypress.io/guides/tooling/typescript-support#Install-TypeScript
 {
   "compilerOptions": {
     "target": "ESNext",
