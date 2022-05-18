@@ -46,6 +46,10 @@ case "$CMD" in
     cd repos/client
     pnpm test "$@"
     ;;
+  c.cypress) ##   Run test with fancy UI
+    cd repos/client
+    pnpm cypress "$@"
+    ;;
   c.cov) ##       Collect coverage
     cd repos/client
     pnpm coverage "$@"

@@ -9,7 +9,7 @@ describe('My First Test', () => {
     cy.visit('/')
   })
   it('visits the app root url', () => {
-    cy.findByText(/Hello Vite \+ React!/i).should('exist')
+    cy.findByText(/Hello!/i).should('exist')
   })
   it('should increment count on click', () => {
     cy.findByText(/count is: 0/i).should('exist')
