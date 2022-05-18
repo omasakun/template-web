@@ -20,6 +20,7 @@
 - Linaria
 - Jest + React Testing Library
 - Cypress + Cypress Testing Library
+- Playwright + Playwright Testing Library
 - Husky + Lint Staged
 - ESLint
 - Prettier

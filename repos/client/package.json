@@ -8,6 +8,7 @@
     "preview": "vite preview",
     "test": "vitest --ui",
     "cypress": "cypress open",
+    "playwright": "playwright test",
     "coverage": "vitest run --coverage",
     "coverage:serve": "http-server coverage"
   },
@@ -30,6 +31,8 @@
     "@linaria/core": "^3.0.0-beta.15",
     "@linaria/rollup": "3.0.0-beta.15",
     "@linaria/shaker": "3.0.0-beta.15",
+    "@playwright-testing-library/test": "^4.2.1",
+    "@playwright/test": "^1.22.1",
     "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
