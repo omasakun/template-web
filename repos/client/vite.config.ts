@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-import linaria from 'vite-plugin-linaria'
+import linaria from '@linaria/rollup'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { InlineConfig } from 'vitest'
 
@@ -14,7 +14,13 @@ const test: InlineConfig = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), linaria(), tsconfigPaths()],
+  plugins: [
+    react(),
+    linaria({
+      sourceMap: process.env.NODE_ENV !== 'production',
+    }),
+    tsconfigPaths(),
+  ],
   define: {
     'import.meta.vitest': 'undefined', // https://vitest.dev/guide/in-source.html#production-build
   },

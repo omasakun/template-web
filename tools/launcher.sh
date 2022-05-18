@@ -38,6 +38,10 @@ case "$CMD" in
     cd repos/client
     pnpm dev "$@"
     ;;
+  c.build) ##     Build client app
+    cd repos/client
+    pnpm build "$@"
+    ;;
   c.test) ##      Run test with fancy UI
     cd repos/client
     pnpm test "$@"
