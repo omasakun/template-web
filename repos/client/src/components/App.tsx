@@ -2,6 +2,7 @@ import { css } from '@linaria/core'
 import { useState } from 'react'
 import { Smile } from 'react-feather'
 import ccc from 'classnames'
+import { useCounter } from '@/hooks/useCounter'
 
 const root = css`
   height: 100%;
@@ -19,7 +20,7 @@ const header = css`
 `
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { count, increment } = useCounter()
 
   return (
     <div className={root}>
@@ -28,7 +29,7 @@ function App() {
         Hello!
       </h1>
 
-      <button type='button' onClick={() => setCount((o) => o + 1)}>
+      <button type='button' onClick={() => increment()}>
         count is: {count}
       </button>
     </div>
