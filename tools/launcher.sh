@@ -8,6 +8,14 @@ ROOT="$(dirname "$DIR")"
 CMD="${1:-}"
 shift || :
 
+_launcher_complete_script() {
+  # docs: https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion.html
+  # tutorial: https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial
+  if [ "$COMP_CWORD" == "1" ]; then
+    COMPREPLY=($(compgen -W "$("$SCRIPT")" -- "${COMP_WORDS[COMP_CWORD]}"))
+  fi
+}
+
 pushd "$ROOT" > /dev/null
 
 case "$CMD" in
@@ -24,7 +32,8 @@ case "$CMD" in
     echo "Added to \$PATH: $BIN"
     export PATH="$PATH:$BIN"
 
-    complete -W "$("$SCRIPT")" "-"
+    # complete -W "$("$SCRIPT")" "-"
+    complete -F _launcher_complete_script "-"
     ;;
   bridge.net) ##   Expose port 8137 (WSL2)
     # ref: https://github.com/microsoft/WSL/issues/5439
